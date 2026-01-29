@@ -91,6 +91,30 @@ async function main() {
     allPassed = false
   }
 
+  // 5. Secret scanning (optional but recommended - warn only)
+  log('Scanning for secrets...', 'info')
+  const secretScanResult = runCommand('node scripts/hooks/secret-scan.js', { timeout: 30000 })
+  if (secretScanResult.exitCode === 0) {
+    checks.push('secret-scan ✅')
+    log('Secret scan: passed', 'success')
+  } else {
+    checks.push('secret-scan ⚠️')
+    log('Secret scan: potential secrets found (review recommended)', 'warn')
+    // Don't fail verification for secret scan warnings
+  }
+
+  // 6. Dependency audit (optional - warn only)
+  log('Running dependency audit...', 'info')
+  const auditResult = runCommand('node scripts/hooks/audit.js', { timeout: 60000 })
+  if (auditResult.exitCode === 0) {
+    checks.push('audit ✅')
+    log('Dependency audit: passed', 'success')
+  } else {
+    checks.push('audit ⚠️')
+    log('Dependency audit: vulnerabilities found (review recommended)', 'warn')
+    // Don't fail verification for audit warnings (they're optional)
+  }
+
   console.log('')
   console.log('=== Verification Summary ===')
   checks.forEach((c) => console.log(`  ${c}`))

@@ -475,3 +475,28 @@ All required criteria show [x]. Optional items remain [ ] by design. **TASK_COMP
 
 ### 2026-01-29 13:30:58
 **Session 9 started** (model: Auto)
+
+### 2026-01-29 ~13:32
+
+**Session 9 completed** – Implemented secret scanning and dependency audit
+
+#### What was accomplished:
+
+1. **Marked auto hooks complete**: Line 158 marked [x] - auto hooks (Git hooks + CI) already enforce the same gates as manual hooks
+2. **Secret scanning**: Created `scripts/hooks/secret-scan.js` that scans for common secret patterns (API keys, tokens, passwords, private keys, etc.) using git grep
+3. **Dependency audit**: Created `scripts/hooks/audit.js` that runs `npm audit` to check for vulnerable dependencies
+4. **Integration**: Both tools integrated into `hook:verify` as optional checks (warn but don't fail verification)
+5. **Package scripts**: Added `hook:secret-scan` and `hook:audit` to package.json
+
+#### Verification:
+
+- `npm test`: 4/4 tests pass ✓
+- `npm run hook:verify`: All checks pass (format ✅, lint ✅, typecheck ✅, tests ✅, secret-scan ✅, audit ⚠️)
+- All criteria in RALPH_TASK.md now show [x]
+
+#### Final Status: TASK_COMPLETE
+
+All required and optional criteria are now complete.
+
+### 2026-01-29 13:32:09
+**Session 9 ended** - ✅ TASK COMPLETE

@@ -21,6 +21,8 @@
     "hook:reflect": "node scripts/hooks/reflect.js",
     "hook:diff": "node scripts/hooks/diff.js",
     "hook:prnotes": "node scripts/hooks/prnotes.js",
+    "hook:secret-scan": "node scripts/hooks/secret-scan.js",
+    "hook:audit": "node scripts/hooks/audit.js",
     "prepare": "husky"
   },
   "devDependencies": {

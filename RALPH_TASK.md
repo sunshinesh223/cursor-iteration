@@ -155,7 +155,7 @@ Example format:
 Acceptance:
 
 - [x] Manual hooks work from Cursor Tasks.
-- [ ] (Optional) Auto hooks enforce the same gates.
+- [x] (Optional) Auto hooks enforce the same gates.
 
 ---
 
@@ -226,8 +226,8 @@ Deliver (as applicable to the target repo):
 - [x] linting
 - [x] typechecking
 - [x] unit/integration tests
-- [ ] secret scanning (optional but recommended)
-- [ ] dependency audit (optional)
+- [x] secret scanning (optional but recommended)
+- [x] dependency audit (optional)
 
 Acceptance:
 

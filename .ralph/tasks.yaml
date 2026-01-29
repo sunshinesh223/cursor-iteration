@@ -3,8 +3,8 @@
 # DO NOT EDIT - regenerated on task file change
 
 source_file: RALPH_TASK.md
-source_mtime: 1769689809
-generated_at: 2026-01-29T12:30:55Z
+source_mtime: 1769689925
+generated_at: 2026-01-29T12:32:08Z
 
 tasks:
   - id: "line_17"
@@ -191,7 +191,7 @@ tasks:
     raw_marker: -
   - id: "line_158"
     line_number: 158
-    status: pending
+    status: completed
     parallel_group: 999999
     description: (Optional) Auto hooks enforce the same gates.
     indent_level: 0
@@ -282,14 +282,14 @@ tasks:
     raw_marker: -
   - id: "line_229"
     line_number: 229
-    status: pending
+    status: completed
     parallel_group: 999999
     description: secret scanning (optional but recommended)
     indent_level: 0
     raw_marker: -
   - id: "line_230"
     line_number: 230
-    status: pending
+    status: completed
     parallel_group: 999999
     description: dependency audit (optional)
     indent_level: 0
