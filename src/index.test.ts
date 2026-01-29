@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { VERSION, getVersion } from './index'
+import { VERSION, getVersion } from './index.js'
 
 describe('index', () => {
   describe('VERSION', () => {

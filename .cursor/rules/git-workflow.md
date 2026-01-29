@@ -11,6 +11,7 @@
 Types: feat, fix, refactor, docs, test, chore, perf, ci
 
 Examples:
+
 - `feat: add user authentication`
 - `fix: resolve null pointer in auth service`
 - `refactor: extract validation logic`
@@ -27,6 +28,7 @@ Examples:
 ## Pull Request Workflow
 
 When creating PRs:
+
 1. Analyze full commit history (not just latest commit)
 2. Use `git diff [base-branch]...HEAD` to see all changes
 3. Draft comprehensive PR summary

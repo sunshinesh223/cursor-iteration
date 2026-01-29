@@ -26,7 +26,6 @@ async function main() {
 
   // Get diff stat
   const diffStat = runCommand('git diff --stat main...HEAD 2>/dev/null || git diff --stat HEAD~1')
-  const stats = diffStat.stdout || ''
 
   // Count file types
   const sourceFiles = changedFiles.filter(

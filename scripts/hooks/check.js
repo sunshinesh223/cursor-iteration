@@ -18,7 +18,7 @@ async function main() {
 
   const branch = getCurrentBranch()
   const checks = []
-  let allPassed = true
+  const allPassed = true
 
   // Check if node_modules exists
   const hasNodeModules = runCommand('test -d node_modules').success
@@ -45,7 +45,7 @@ async function main() {
   // ESLint check
   if (hasNodeModules && commandExists('npx')) {
     log('Running ESLint...', 'info')
-    const lintResult = runCommand('npx eslint . --ext .ts,.tsx,.js,.jsx 2>/dev/null || true')
+    const lintResult = runCommand('npx eslint . 2>/dev/null || true')
     if (lintResult.exitCode === 0) {
       checks.push('lint ✅')
       log('Lint check passed', 'success')

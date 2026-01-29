@@ -15,7 +15,8 @@ Brief description of the bug and its impact.
 3. Expected vs actual behavior
 
 **Environment:**
-- OS: 
+
+- OS:
 - Node version:
 - Browser (if applicable):
 
@@ -47,6 +48,7 @@ The actual root cause after investigation.
 ## Regression Test
 
 Write a test that:
+
 1. Fails before the fix
 2. Passes after the fix
 

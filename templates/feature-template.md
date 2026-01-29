@@ -29,6 +29,7 @@ So that [benefit].
 ## Non-Goals
 
 What this feature explicitly does NOT do:
+
 - Not included: X
 - Not included: Y
 - Future consideration: Z
@@ -60,14 +61,17 @@ Response: { ... }
 ## Implementation Plan
 
 ### Phase 1: Foundation
+
 1. [ ] Set up basic structure
 2. [ ] Create types/interfaces
 
 ### Phase 2: Core Logic
+
 1. [ ] Implement main functionality
 2. [ ] Add error handling
 
 ### Phase 3: Testing
+
 1. [ ] Write unit tests
 2. [ ] Write integration tests
 3. [ ] Manual testing
@@ -90,6 +94,7 @@ Response: { ... }
 ## Rollback Plan
 
 If issues occur:
+
 1. Disable feature flag
 2. Investigate root cause
 3. Fix and re-deploy

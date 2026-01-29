@@ -1,8 +1,9 @@
 ---
-
 task: Migrate everything-claude-code features to Cursor (feature parity)
-test_command: "pnpm test"
--------------------------
+test_command: 'pnpm test'
+---
+
+---
 
 # Task: Feature-Parity Migration to Cursor
 
@@ -22,13 +23,13 @@ Target: Cursor IDE
 
 ## Context
 
-* Prioritize **behavioral parity**: the same outcomes and team habits should emerge.
-* Cursor has different primitives than Claude Code; use Cursor-native mechanisms where possible:
+- Prioritize **behavioral parity**: the same outcomes and team habits should emerge.
+- Cursor has different primitives than Claude Code; use Cursor-native mechanisms where possible:
+  - Cursor Rules (project-level)
+  - Cursor Tasks / command palette runnable scripts
+  - Optional: git hooks / CI (only if needed for parity)
 
-  * Cursor Rules (project-level)
-  * Cursor Tasks / command palette runnable scripts
-  * Optional: git hooks / CI (only if needed for parity)
-* If something cannot be replicated 1:1, implement the nearest equivalent and document the delta.
+- If something cannot be replicated 1:1, implement the nearest equivalent and document the delta.
 
 ---
 
@@ -40,19 +41,19 @@ Target: Cursor IDE
 
 Deliver:
 
-* [x] Cursor project rules that enforce:
+- [x] Cursor project rules that enforce:
+  - planning before coding (when non-trivial)
+  - small diffs, iterative loop
+  - explicit assumptions + risk flags
+  - testing discipline
+  - security hygiene (secrets, destructive ops)
+  - consistent output format (checklists, summaries)
 
-  * planning before coding (when non-trivial)
-  * small diffs, iterative loop
-  * explicit assumptions + risk flags
-  * testing discipline
-  * security hygiene (secrets, destructive ops)
-  * consistent output format (checklists, summaries)
-* [x] A “house style” section (tone, conventions, decision rules).
+- [x] A “house style” section (tone, conventions, decision rules).
 
 Acceptance:
 
-* [x] Rules are visible/active in Cursor and referenced in quickstart.
+- [x] Rules are visible/active in Cursor and referenced in quickstart.
 
 ---
 
@@ -62,18 +63,18 @@ Acceptance:
 
 Deliver:
 
-* [x] A documented loop used daily:
-
+- [x] A documented loop used daily:
   1. define intent
   2. micro-plan
   3. implement small change
   4. run checks/tests
   5. reflect + log
-* [x] A single “happy path” command that does most of the loop.
+
+- [x] A single “happy path” command that does most of the loop.
 
 Acceptance:
 
-* [x] A new dev can follow the loop without needing prior context.
+- [x] A new dev can follow the loop without needing prior context.
 
 ---
 
@@ -85,49 +86,49 @@ Acceptance:
 
 Expose these as Cursor Tasks + `pnpm` scripts:
 
-* [x] **Hook: Preflight** (`pnpm hook:preflight`)
-  Collect branch/status/changed files + record intent.
+- [x] **Hook: Preflight** (`pnpm hook:preflight`)
+      Collect branch/status/changed files + record intent.
 
-* [x] **Hook: Plan** (`pnpm hook:plan`)
-  Record a micro-plan (3–7 bullets) + test strategy.
+- [x] **Hook: Plan** (`pnpm hook:plan`)
+      Record a micro-plan (3–7 bullets) + test strategy.
 
-* [x] **Hook: Check** (`pnpm hook:check`)
-  Fast gate: format/lint/typecheck (repo-defined). Fail fast.
+- [x] **Hook: Check** (`pnpm hook:check`)
+      Fast gate: format/lint/typecheck (repo-defined). Fail fast.
 
-* [x] **Hook: Test** (`pnpm hook:test`)
-  Focused tests (repo-defined).
+- [x] **Hook: Test** (`pnpm hook:test`)
+      Focused tests (repo-defined).
 
-* [x] **Hook: Verify** (`pnpm hook:verify`)
-  Full confidence run (at least `pnpm test`). Non-zero on failure.
+- [x] **Hook: Verify** (`pnpm hook:verify`)
+      Full confidence run (at least `pnpm test`). Non-zero on failure.
 
-* [x] **Hook: Iterate** (`pnpm hook:iterate`)
-  The main loop: preflight → check → test → summarize → log next step.
+- [x] **Hook: Iterate** (`pnpm hook:iterate`)
+      The main loop: preflight → check → test → summarize → log next step.
 
-* [x] **Hook: Reflect** (`pnpm hook:reflect`)
-  Capture what worked/failed + “rule we should adopt”.
+- [x] **Hook: Reflect** (`pnpm hook:reflect`)
+      Capture what worked/failed + “rule we should adopt”.
 
-* [x] **Hook: Diff Summary** (`pnpm hook:diff`)
-  Human-readable summary of changes (for PR/review).
+- [x] **Hook: Diff Summary** (`pnpm hook:diff`)
+      Human-readable summary of changes (for PR/review).
 
-* [x] **Hook: PR Notes** (`pnpm hook:prnotes`)
-  Generate PR description (what/why/tests/risks/rollback).
+- [x] **Hook: PR Notes** (`pnpm hook:prnotes`)
+      Generate PR description (what/why/tests/risks/rollback).
 
 ### Required: Learning Log
 
-* [x] Append-only log at `docs/learning-log.md`
-* [x] Each hook run appends a structured entry.
+- [x] Append-only log at `docs/learning-log.md`
+- [x] Each hook run appends a structured entry.
 
 Entry must include:
 
-* timestamp (ISO)
-* command name
-* branch
-* intent
-* files changed (if available)
-* checks/tests executed
-* PASS/FAIL
-* failure summary (if any)
-* next step
+- timestamp (ISO)
+- command name
+- branch
+- intent
+- files changed (if available)
+- checks/tests executed
+- PASS/FAIL
+- failure summary (if any)
+- next step
 
 Example format:
 
@@ -145,16 +146,16 @@ Example format:
 
 ### Optional (if you want stronger parity): Auto Hooks
 
-* [ ] Git hooks (husky) call the same `pnpm hook:*` scripts:
+- [ ] Git hooks (husky) call the same `pnpm hook:*` scripts:
+  - pre-commit → `pnpm hook:check`
+  - pre-push → `pnpm hook:verify`
 
-  * pre-commit → `pnpm hook:check`
-  * pre-push → `pnpm hook:verify`
-* [ ] CI runs `pnpm hook:verify` on PR.
+- [ ] CI runs `pnpm hook:verify` on PR.
 
 Acceptance:
 
-* [x] Manual hooks work from Cursor Tasks.
-* [ ] (Optional) Auto hooks enforce the same gates.
+- [x] Manual hooks work from Cursor Tasks.
+- [ ] (Optional) Auto hooks enforce the same gates.
 
 ---
 
@@ -164,25 +165,25 @@ Acceptance:
 
 Deliver:
 
-* [x] A review checklist template:
+- [x] A review checklist template:
+  - correctness
+  - tests
+  - edge cases
+  - security
+  - performance
+  - backwards compatibility
 
-  * correctness
-  * tests
-  * edge cases
-  * security
-  * performance
-  * backwards compatibility
-* [x] A “risk flag” protocol (examples):
+- [x] A “risk flag” protocol (examples):
+  - data loss risk
+  - security exposure
+  - breaking API change
+  - non-determinism/flaky tests
 
-  * data loss risk
-  * security exposure
-  * breaking API change
-  * non-determinism/flaky tests
-* [x] A standard “PR notes” format generated by `Hook: PR Notes`.
+- [x] A standard “PR notes” format generated by `Hook: PR Notes`.
 
 Acceptance:
 
-* [x] Review artifacts can be produced for any change in <2 minutes.
+- [x] Review artifacts can be produced for any change in <2 minutes.
 
 ---
 
@@ -192,27 +193,26 @@ Acceptance:
 
 Deliver:
 
-* [x] A task template (like this file format) for repeatable tasks:
+- [x] A task template (like this file format) for repeatable tasks:
+  - success criteria
+  - context
+  - acceptance tests
 
-  * success criteria
-  * context
-  * acceptance tests
-* [x] A bugfix template:
+- [x] A bugfix template:
+  - reproduction
+  - root cause hypothesis
+  - fix plan
+  - regression test
 
-  * reproduction
-  * root cause hypothesis
-  * fix plan
-  * regression test
-* [x] A feature template:
-
-  * user story
-  * constraints
-  * non-goals
-  * rollout/rollback
+- [x] A feature template:
+  - user story
+  - constraints
+  - non-goals
+  - rollout/rollback
 
 Acceptance:
 
-* [x] One index doc links to all templates.
+- [x] One index doc links to all templates.
 
 ---
 
@@ -222,16 +222,16 @@ Acceptance:
 
 Deliver (as applicable to the target repo):
 
-* [x] formatting
-* [x] linting
-* [x] typechecking
-* [x] unit/integration tests
-* [ ] secret scanning (optional but recommended)
-* [ ] dependency audit (optional)
+- [x] formatting
+- [x] linting
+- [x] typechecking
+- [x] unit/integration tests
+- [ ] secret scanning (optional but recommended)
+- [ ] dependency audit (optional)
 
 Acceptance:
 
-* [x] `Hook: Check` and `Hook: Verify` produce deterministic pass/fail.
+- [x] `Hook: Check` and `Hook: Verify` produce deterministic pass/fail.
 
 ---
 
@@ -241,23 +241,23 @@ Acceptance:
 
 Deliver:
 
-* [x] `README_CURSOR.md` including:
+- [x] `README_CURSOR.md` including:
+  - install
+  - open in Cursor
+  - how to run Hook: Iterate
+  - how to review changes
+  - how to add new rules/learnings
 
-  * install
-  * open in Cursor
-  * how to run Hook: Iterate
-  * how to review changes
-  * how to add new rules/learnings
-* [x] “Daily flow” section:
+- [x] “Daily flow” section:
+  - start: preflight + plan
+  - during: iterate loop
+  - end: verify + pr notes
 
-  * start: preflight + plan
-  * during: iterate loop
-  * end: verify + pr notes
-* [x] Troubleshooting section (common failure modes).
+- [x] Troubleshooting section (common failure modes).
 
 Acceptance:
 
-* [x] A new dev can run the loop on day 1.
+- [x] A new dev can run the loop on day 1.
 
 ---
 
@@ -265,22 +265,22 @@ Acceptance:
 
 Create `FEATURE_PARITY.md` with a table like:
 
-* Source Feature
-* Cursor Equivalent
-* Status: Implemented / Partial / Gap
-* Notes / Workaround
-* Owner / Next step (optional)
+- Source Feature
+- Cursor Equivalent
+- Status: Implemented / Partial / Gap
+- Notes / Workaround
+- Owner / Next step (optional)
 
 Minimum rows to include:
 
-* rules system
-* iterative workflow
-* hooks (manual)
-* hooks (auto, if implemented)
-* review checklists
-* templates
-* quality gates
-* onboarding docs
+- rules system
+- iterative workflow
+- hooks (manual)
+- hooks (auto, if implemented)
+- review checklists
+- templates
+- quality gates
+- onboarding docs
 
 ---
 
@@ -288,21 +288,21 @@ Minimum rows to include:
 
 Expose these task names inside Cursor:
 
-* Hook: Preflight
-* Hook: Plan
-* Hook: Check
-* Hook: Test
-* Hook: Verify
-* Hook: Iterate
-* Hook: Reflect
-* Hook: Diff Summary
-* Hook: PR Notes
+- Hook: Preflight
+- Hook: Plan
+- Hook: Check
+- Hook: Test
+- Hook: Verify
+- Hook: Iterate
+- Hook: Reflect
+- Hook: Diff Summary
+- Hook: PR Notes
 
 Each task must:
 
-* run from repo root
-* exit non-zero on failure (so Cursor shows “failed”)
-* write to `docs/learning-log.md`
+- run from repo root
+- exit non-zero on failure (so Cursor shows “failed”)
+- write to `docs/learning-log.md`
 
 ---
 
@@ -317,4 +317,3 @@ Each task must:
 7. [x] `pnpm test` passes
 
 ---
-

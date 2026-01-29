@@ -7,12 +7,14 @@ This is the core workflow for all development tasks.
 ### Daily Flow
 
 1. **Start: Preflight + Plan**
+
    ```bash
    pnpm hook:preflight    # Check state, record intent
    pnpm hook:plan         # Create micro-plan (3-7 bullets)
    ```
 
 2. **During: Iterate Loop**
+
    ```bash
    # Make a small change
    # Then:
@@ -27,17 +29,17 @@ This is the core workflow for all development tasks.
 
 ### Hook Commands Reference
 
-| Command | Purpose | When to Use |
-|---------|---------|-------------|
-| `hook:preflight` | Collect branch/status/changed files | Start of session |
-| `hook:plan` | Record micro-plan + test strategy | Before implementing |
-| `hook:check` | Fast lint/format/typecheck | After changes |
-| `hook:test` | Run focused tests | After changes |
-| `hook:verify` | Full verification | Before commit |
-| `hook:iterate` | Main loop (all above) | After each small change |
-| `hook:reflect` | Capture learnings | End of session |
-| `hook:diff` | Human-readable diff summary | Before PR |
-| `hook:prnotes` | Generate PR description | Creating PR |
+| Command          | Purpose                             | When to Use             |
+| ---------------- | ----------------------------------- | ----------------------- |
+| `hook:preflight` | Collect branch/status/changed files | Start of session        |
+| `hook:plan`      | Record micro-plan + test strategy   | Before implementing     |
+| `hook:check`     | Fast lint/format/typecheck          | After changes           |
+| `hook:test`      | Run focused tests                   | After changes           |
+| `hook:verify`    | Full verification                   | Before commit           |
+| `hook:iterate`   | Main loop (all above)               | After each small change |
+| `hook:reflect`   | Capture learnings                   | End of session          |
+| `hook:diff`      | Human-readable diff summary         | Before PR               |
+| `hook:prnotes`   | Generate PR description             | Creating PR             |
 
 ### Small Changes Philosophy
 
@@ -49,6 +51,7 @@ This is the core workflow for all development tasks.
 ### Learning Capture
 
 All hooks append to `docs/learning-log.md` with:
+
 - Timestamp (ISO)
 - Command name
 - Branch

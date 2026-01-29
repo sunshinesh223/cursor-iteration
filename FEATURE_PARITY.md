@@ -14,24 +14,24 @@
 
 ## Feature Mapping
 
-| Source Feature | Cursor Equivalent | Status | Notes |
-|----------------|-------------------|--------|-------|
-| **Rules System** | `.cursor/rules/*.md` | ✅ Implemented | Auto-loaded by Cursor |
-| **Iterative Workflow** | `pnpm hook:*` scripts | ✅ Implemented | Same loop: plan → execute → test → reflect |
-| **Hooks (Manual)** | `pnpm hook:*` commands | ✅ Implemented | All 9 hooks available |
-| **Hooks (Auto/Git)** | Husky + lint-staged | ⏭️ Gap | Can add husky for pre-commit hooks |
-| **Review Checklists** | `templates/review-checklist.md` | ✅ Implemented | Manual checklist usage |
-| **Task Templates** | `templates/*.md` | ✅ Implemented | Task, bugfix, feature templates |
-| **Quality Gates** | `hook:check`, `hook:verify` | ✅ Implemented | Format, lint, typecheck, test |
-| **Onboarding Docs** | `README_CURSOR.md` | ✅ Implemented | Quickstart in <10 minutes |
-| **Learning Log** | `docs/learning-log.md` | ✅ Implemented | Auto-appended by hooks |
-| **Agents** | Cursor AI + Rules | 🟡 Partial | Use rules to guide behavior; no subagent dispatch |
-| **Skills** | `.cursor/rules/*.md` | 🟡 Partial | Encoded as rules; no dynamic loading |
-| **Commands (/)** | `pnpm hook:*` | ✅ Implemented | CLI commands vs. slash commands |
-| **MCP Configs** | Cursor MCP settings | ⏭️ Gap | Configure in Cursor settings directly |
-| **Contexts** | Cursor Rules | 🟡 Partial | No dynamic context injection |
-| **Session Persistence** | Git commits | 🟡 Partial | State in git, not session memory |
-| **Continuous Learning** | `.ralph/guardrails.md` | 🟡 Partial | Manual guardrail updates |
+| Source Feature          | Cursor Equivalent               | Status         | Notes                                             |
+| ----------------------- | ------------------------------- | -------------- | ------------------------------------------------- |
+| **Rules System**        | `.cursor/rules/*.md`            | ✅ Implemented | Auto-loaded by Cursor                             |
+| **Iterative Workflow**  | `pnpm hook:*` scripts           | ✅ Implemented | Same loop: plan → execute → test → reflect        |
+| **Hooks (Manual)**      | `pnpm hook:*` commands          | ✅ Implemented | All 9 hooks available                             |
+| **Hooks (Auto/Git)**    | Husky + lint-staged             | ⏭️ Gap         | Can add husky for pre-commit hooks                |
+| **Review Checklists**   | `templates/review-checklist.md` | ✅ Implemented | Manual checklist usage                            |
+| **Task Templates**      | `templates/*.md`                | ✅ Implemented | Task, bugfix, feature templates                   |
+| **Quality Gates**       | `hook:check`, `hook:verify`     | ✅ Implemented | Format, lint, typecheck, test                     |
+| **Onboarding Docs**     | `README_CURSOR.md`              | ✅ Implemented | Quickstart in <10 minutes                         |
+| **Learning Log**        | `docs/learning-log.md`          | ✅ Implemented | Auto-appended by hooks                            |
+| **Agents**              | Cursor AI + Rules               | 🟡 Partial     | Use rules to guide behavior; no subagent dispatch |
+| **Skills**              | `.cursor/rules/*.md`            | 🟡 Partial     | Encoded as rules; no dynamic loading              |
+| **Commands (/)**        | `pnpm hook:*`                   | ✅ Implemented | CLI commands vs. slash commands                   |
+| **MCP Configs**         | Cursor MCP settings             | ⏭️ Gap         | Configure in Cursor settings directly             |
+| **Contexts**            | Cursor Rules                    | 🟡 Partial     | No dynamic context injection                      |
+| **Session Persistence** | Git commits                     | 🟡 Partial     | State in git, not session memory                  |
+| **Continuous Learning** | `.ralph/guardrails.md`          | 🟡 Partial     | Manual guardrail updates                          |
 
 ---
 
@@ -43,6 +43,7 @@
 **Cursor**: `.cursor/rules/*.md` - Auto-loaded by Cursor IDE
 
 Implemented rules:
+
 - `security.md` - Secret management, security checks
 - `coding-style.md` - Immutability, file organization
 - `testing.md` - TDD workflow, coverage requirements
@@ -52,25 +53,26 @@ Implemented rules:
 
 ### Hooks (Manual) ✅
 
-| Source Hook | Cursor Command | Description |
-|-------------|----------------|-------------|
-| PreToolUse | - | Not applicable in Cursor |
-| PostToolUse | - | Not applicable in Cursor |
-| SessionStart | `hook:preflight` | Check state at start |
-| SessionEnd | `hook:reflect` | Capture learnings |
-| Custom | `hook:plan` | Record micro-plan |
-| Custom | `hook:check` | Fast lint/format/typecheck |
-| Custom | `hook:test` | Run test suite |
-| Custom | `hook:verify` | Full verification |
-| Custom | `hook:iterate` | Main loop |
-| Custom | `hook:diff` | Diff summary |
-| Custom | `hook:prnotes` | PR description |
+| Source Hook  | Cursor Command   | Description                |
+| ------------ | ---------------- | -------------------------- |
+| PreToolUse   | -                | Not applicable in Cursor   |
+| PostToolUse  | -                | Not applicable in Cursor   |
+| SessionStart | `hook:preflight` | Check state at start       |
+| SessionEnd   | `hook:reflect`   | Capture learnings          |
+| Custom       | `hook:plan`      | Record micro-plan          |
+| Custom       | `hook:check`     | Fast lint/format/typecheck |
+| Custom       | `hook:test`      | Run test suite             |
+| Custom       | `hook:verify`    | Full verification          |
+| Custom       | `hook:iterate`   | Main loop                  |
+| Custom       | `hook:diff`      | Diff summary               |
+| Custom       | `hook:prnotes`   | PR description             |
 
 ### Hooks (Auto) ⏭️
 
 **Gap**: Claude Code has automatic hooks (PreToolUse, PostToolUse) that run on specific events.
 
 **Workaround**:
+
 1. Use `husky` for git hooks (pre-commit, pre-push)
 2. Run hooks manually via `pnpm hook:*`
 3. Add to CI pipeline for enforcement
@@ -81,6 +83,7 @@ Implemented rules:
 **Cursor**: Use rules to guide AI behavior
 
 **Partial Implementation**:
+
 - Rules encode agent-like behavior
 - No automatic subagent dispatch
 - Manual invocation of specialized behaviors
@@ -121,12 +124,14 @@ Implemented rules:
 ## Migration Notes
 
 The source repo (`everything-claude-code`) is designed for Claude Code CLI with specific primitives:
+
 - Plugin system
 - Hook events (PreToolUse, PostToolUse, etc.)
 - Slash commands
 - Subagent dispatch
 
 Cursor has different primitives:
+
 - Project rules (`.cursor/rules/`)
 - Command palette / scripts
 - Built-in AI assistance

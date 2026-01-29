@@ -39,7 +39,7 @@
  */
 function calculateDiscount(user: User, cart: Cart): number {
   // Business rule: VIP users get base 20% off
-  const vipDiscount = user.isVip ? 0.2 : 0;
+  const vipDiscount = user.isVip ? 0.2 : 0
   // ...
 }
 ```

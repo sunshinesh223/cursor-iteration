@@ -3,6 +3,7 @@
 ## Minimum Test Coverage: 80%
 
 Test Types (ALL required for behavior changes):
+
 1. **Unit Tests** - Individual functions, utilities, components
 2. **Integration Tests** - API endpoints, database operations
 3. **E2E Tests** - Critical user flows (when applicable)
@@ -10,6 +11,7 @@ Test Types (ALL required for behavior changes):
 ## Test-Driven Development
 
 MANDATORY workflow for new features:
+
 1. Write test first (RED)
 2. Run test - it should FAIL
 3. Write minimal implementation (GREEN)

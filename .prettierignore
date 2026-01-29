@@ -1,0 +1,14 @@
+# Auto-generated files
+.ralph/tasks.yaml
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

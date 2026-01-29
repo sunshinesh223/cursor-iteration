@@ -28,7 +28,7 @@ async function main() {
   console.log('   - Which approaches were effective?')
   console.log('   - What saved time?')
   console.log('')
-  console.log('2. What didn\'t work?')
+  console.log("2. What didn't work?")
   console.log('   - What caused delays or issues?')
   console.log('   - What assumptions were wrong?')
   console.log('')

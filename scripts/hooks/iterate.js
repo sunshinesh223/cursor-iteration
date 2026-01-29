@@ -21,7 +21,6 @@ async function main() {
 
   const branch = getCurrentBranch()
   const changedFiles = getChangedFiles()
-  const status = getGitStatus()
   const intent = getIntent() || 'Iteration loop'
   const checks = []
   let allPassed = true

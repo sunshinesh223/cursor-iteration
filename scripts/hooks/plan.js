@@ -3,7 +3,6 @@
  * Hook: Plan
  * Record a micro-plan (3-7 bullets) + test strategy
  */
-import readline from 'readline'
 import {
   log,
   getCurrentBranch,
@@ -11,20 +10,6 @@ import {
   formatLogEntry,
   getIntent,
 } from '../lib/utils.js'
-
-async function prompt(question) {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  })
-
-  return new Promise((resolve) => {
-    rl.question(question, (answer) => {
-      rl.close()
-      resolve(answer)
-    })
-  })
-}
 
 async function main() {
   log('Recording micro-plan...', 'info')

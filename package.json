@@ -7,8 +7,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
-    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -20,11 +20,13 @@
     "hook:iterate": "node scripts/hooks/iterate.js",
     "hook:reflect": "node scripts/hooks/reflect.js",
     "hook:diff": "node scripts/hooks/diff.js",
-    "hook:prnotes": "node scripts/hooks/prnotes.js"
+    "hook:prnotes": "node scripts/hooks/prnotes.js",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
     "eslint": "^8.56.0",
+    "husky": "^9.1.7",
     "prettier": "^3.2.0",
     "typescript": "^5.3.0",
     "vitest": "^1.2.0"

@@ -3,6 +3,7 @@
 ## Mandatory Security Checks
 
 Before ANY commit:
+
 - [ ] No hardcoded secrets (API keys, passwords, tokens)
 - [ ] All user inputs validated
 - [ ] SQL injection prevention (parameterized queries)
@@ -16,7 +17,7 @@ Before ANY commit:
 
 ```typescript
 // NEVER: Hardcoded secrets
-const apiKey = "sk-proj-xxxxx"
+const apiKey = 'sk-proj-xxxxx'
 
 // ALWAYS: Environment variables
 const apiKey = process.env.OPENAI_API_KEY
@@ -29,6 +30,7 @@ if (!apiKey) {
 ## Security Response Protocol
 
 If security issue found:
+
 1. STOP immediately
 2. Fix CRITICAL issues before continuing
 3. Rotate any exposed secrets
@@ -37,6 +39,7 @@ If security issue found:
 ## Destructive Operations
 
 NEVER execute these without explicit user confirmation:
+
 - `rm -rf` on important directories
 - `DROP TABLE` or `DELETE FROM` without WHERE
 - `git push --force` to shared branches

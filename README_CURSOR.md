@@ -44,6 +44,7 @@ pnpm hook:iterate
 ```
 
 This runs:
+
 1. **Preflight** - Check branch, status, changed files
 2. **Check** - Format, lint, typecheck (fast)
 3. **Test** - Run test suite
@@ -93,6 +94,7 @@ After learning from a failure:
 
 ```markdown
 ### Sign: [Name]
+
 - **Trigger**: When this happens
 - **Instruction**: What to do instead
 - **Added after**: Failure description
@@ -130,17 +132,17 @@ pnpm hook:prnotes      # Generate PR notes if needed
 
 ## All Hook Commands
 
-| Command | Purpose | When to Use |
-|---------|---------|-------------|
-| `pnpm hook:preflight` | Collect branch/status/files | Start of session |
-| `pnpm hook:plan` | Create micro-plan (3-7 bullets) | Before implementing |
-| `pnpm hook:check` | Fast lint/format/typecheck | Quick validation |
-| `pnpm hook:test` | Run test suite | After changes |
-| `pnpm hook:verify` | Full verification | Before commit |
-| `pnpm hook:iterate` | Main loop (all checks) | After each change |
-| `pnpm hook:reflect` | Capture learnings | End of session |
-| `pnpm hook:diff` | Human-readable diff summary | Before PR |
-| `pnpm hook:prnotes` | Generate PR description | Creating PR |
+| Command               | Purpose                         | When to Use         |
+| --------------------- | ------------------------------- | ------------------- |
+| `pnpm hook:preflight` | Collect branch/status/files     | Start of session    |
+| `pnpm hook:plan`      | Create micro-plan (3-7 bullets) | Before implementing |
+| `pnpm hook:check`     | Fast lint/format/typecheck      | Quick validation    |
+| `pnpm hook:test`      | Run test suite                  | After changes       |
+| `pnpm hook:verify`    | Full verification               | Before commit       |
+| `pnpm hook:iterate`   | Main loop (all checks)          | After each change   |
+| `pnpm hook:reflect`   | Capture learnings               | End of session      |
+| `pnpm hook:diff`      | Human-readable diff summary     | Before PR           |
+| `pnpm hook:prnotes`   | Generate PR description         | Creating PR         |
 
 ---
 

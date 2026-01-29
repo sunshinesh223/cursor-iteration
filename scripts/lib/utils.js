@@ -180,13 +180,14 @@ export function exitWithStatus(success) {
  * Print a formatted message
  */
 export function log(message, type = 'info') {
-  const prefix = {
-    info: '[INFO]',
-    warn: '[WARN]',
-    error: '[ERROR]',
-    success: '[OK]',
-    fail: '[FAIL]',
-  }[type] || '[LOG]'
+  const prefix =
+    {
+      info: '[INFO]',
+      warn: '[WARN]',
+      error: '[ERROR]',
+      success: '[OK]',
+      fail: '[FAIL]',
+    }[type] || '[LOG]'
 
   console.log(`${prefix} ${message}`)
 }

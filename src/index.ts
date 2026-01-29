@@ -1,6 +1,6 @@
 /**
  * Cursor Iteration Workflow
- * 
+ *
  * This module exports utilities for the iterative workflow.
  * Most functionality is in the scripts/hooks/ directory.
  */

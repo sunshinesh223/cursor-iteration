@@ -15,7 +15,7 @@ function updateUser(user, name) {
 function updateUser(user, name) {
   return {
     ...user,
-    name
+    name,
   }
 }
 ```
@@ -23,6 +23,7 @@ function updateUser(user, name) {
 ## File Organization
 
 MANY SMALL FILES > FEW LARGE FILES:
+
 - High cohesion, low coupling
 - 200-400 lines typical, 800 max
 - Extract utilities from large components
@@ -51,7 +52,7 @@ import { z } from 'zod'
 
 const schema = z.object({
   email: z.string().email(),
-  age: z.number().int().min(0).max(150)
+  age: z.number().int().min(0).max(150),
 })
 
 const validated = schema.parse(input)
@@ -60,6 +61,7 @@ const validated = schema.parse(input)
 ## Code Quality Checklist
 
 Before marking work complete:
+
 - [ ] Code is readable and well-named
 - [ ] Functions are small (<50 lines)
 - [ ] Files are focused (<800 lines)
