@@ -54,7 +54,7 @@ async function main() {
 
   // 2. Lint check
   log('Running linter...', 'info')
-  const lintResult = runCommand('npx eslint . --ext .ts,.tsx,.js,.jsx')
+  const lintResult = runCommand('npx eslint .')
   if (lintResult.exitCode === 0) {
     checks.push('lint ✅')
     log('Lint: passed', 'success')
