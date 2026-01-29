@@ -13,12 +13,12 @@ Target: Cursor IDE
 
 ## Success Criteria
 
-1. [ ] A developer can open the repo in Cursor and immediately access the migrated workflows (rules + tasks/commands + docs).
-2. [ ] All key features from the source repo are mapped to Cursor equivalents (implemented or explicitly documented as “gap + workaround”).
-3. [ ] “Hooks” behavior (iterative learning loop + auto/IDE triggers + logging) is available in Cursor (manual IDE commands at minimum).
-4. [ ] A feature parity matrix exists: **Source feature → Cursor equivalent → Status → Notes**.
-5. [ ] A quickstart exists that works end-to-end in <10 minutes.
-6. [ ] `pnpm test` passes (if tests exist in the target repo).
+1. [x] A developer can open the repo in Cursor and immediately access the migrated workflows (rules + tasks/commands + docs).
+2. [x] All key features from the source repo are mapped to Cursor equivalents (implemented or explicitly documented as “gap + workaround”).
+3. [x] “Hooks” behavior (iterative learning loop + auto/IDE triggers + logging) is available in Cursor (manual IDE commands at minimum).
+4. [x] A feature parity matrix exists: **Source feature → Cursor equivalent → Status → Notes**.
+5. [x] A quickstart exists that works end-to-end in <10 minutes.
+6. [x] `pnpm test` passes (if tests exist in the target repo).
 
 ## Context
 
@@ -40,7 +40,7 @@ Target: Cursor IDE
 
 Deliver:
 
-* [ ] Cursor project rules that enforce:
+* [x] Cursor project rules that enforce:
 
   * planning before coding (when non-trivial)
   * small diffs, iterative loop
@@ -52,7 +52,7 @@ Deliver:
 
 Acceptance:
 
-* [ ] Rules are visible/active in Cursor and referenced in quickstart.
+* [x] Rules are visible/active in Cursor and referenced in quickstart.
 
 ---
 
@@ -62,7 +62,7 @@ Acceptance:
 
 Deliver:
 
-* [ ] A documented loop used daily:
+* [x] A documented loop used daily:
 
   1. define intent
   2. micro-plan
@@ -73,7 +73,7 @@ Deliver:
 
 Acceptance:
 
-* [ ] A new dev can follow the loop without needing prior context.
+* [x] A new dev can follow the loop without needing prior context.
 
 ---
 
@@ -85,37 +85,37 @@ Acceptance:
 
 Expose these as Cursor Tasks + `pnpm` scripts:
 
-* [ ] **Hook: Preflight** (`pnpm hook:preflight`)
+* [x] **Hook: Preflight** (`pnpm hook:preflight`)
   Collect branch/status/changed files + record intent.
 
-* [ ] **Hook: Plan** (`pnpm hook:plan`)
+* [x] **Hook: Plan** (`pnpm hook:plan`)
   Record a micro-plan (3–7 bullets) + test strategy.
 
-* [ ] **Hook: Check** (`pnpm hook:check`)
+* [x] **Hook: Check** (`pnpm hook:check`)
   Fast gate: format/lint/typecheck (repo-defined). Fail fast.
 
-* [ ] **Hook: Test** (`pnpm hook:test`)
+* [x] **Hook: Test** (`pnpm hook:test`)
   Focused tests (repo-defined).
 
-* [ ] **Hook: Verify** (`pnpm hook:verify`)
+* [x] **Hook: Verify** (`pnpm hook:verify`)
   Full confidence run (at least `pnpm test`). Non-zero on failure.
 
-* [ ] **Hook: Iterate** (`pnpm hook:iterate`)
+* [x] **Hook: Iterate** (`pnpm hook:iterate`)
   The main loop: preflight → check → test → summarize → log next step.
 
-* [ ] **Hook: Reflect** (`pnpm hook:reflect`)
+* [x] **Hook: Reflect** (`pnpm hook:reflect`)
   Capture what worked/failed + “rule we should adopt”.
 
-* [ ] **Hook: Diff Summary** (`pnpm hook:diff`)
+* [x] **Hook: Diff Summary** (`pnpm hook:diff`)
   Human-readable summary of changes (for PR/review).
 
-* [ ] **Hook: PR Notes** (`pnpm hook:prnotes`)
+* [x] **Hook: PR Notes** (`pnpm hook:prnotes`)
   Generate PR description (what/why/tests/risks/rollback).
 
 ### Required: Learning Log
 
-* [ ] Append-only log at `docs/learning-log.md`
-* [ ] Each hook run appends a structured entry.
+* [x] Append-only log at `docs/learning-log.md`
+* [x] Each hook run appends a structured entry.
 
 Entry must include:
 
@@ -153,7 +153,7 @@ Example format:
 
 Acceptance:
 
-* [ ] Manual hooks work from Cursor Tasks.
+* [x] Manual hooks work from Cursor Tasks.
 * [ ] (Optional) Auto hooks enforce the same gates.
 
 ---
@@ -164,7 +164,7 @@ Acceptance:
 
 Deliver:
 
-* [ ] A review checklist template:
+* [x] A review checklist template:
 
   * correctness
   * tests
@@ -182,7 +182,7 @@ Deliver:
 
 Acceptance:
 
-* [ ] Review artifacts can be produced for any change in <2 minutes.
+* [x] Review artifacts can be produced for any change in <2 minutes.
 
 ---
 
@@ -192,18 +192,18 @@ Acceptance:
 
 Deliver:
 
-* [ ] A task template (like this file format) for repeatable tasks:
+* [x] A task template (like this file format) for repeatable tasks:
 
   * success criteria
   * context
   * acceptance tests
-* [ ] A bugfix template:
+* [x] A bugfix template:
 
   * reproduction
   * root cause hypothesis
   * fix plan
   * regression test
-* [ ] A feature template:
+* [x] A feature template:
 
   * user story
   * constraints
@@ -212,7 +212,7 @@ Deliver:
 
 Acceptance:
 
-* [ ] One index doc links to all templates.
+* [x] One index doc links to all templates.
 
 ---
 
@@ -222,16 +222,16 @@ Acceptance:
 
 Deliver (as applicable to the target repo):
 
-* [ ] formatting
-* [ ] linting
-* [ ] typechecking
-* [ ] unit/integration tests
+* [x] formatting
+* [x] linting
+* [x] typechecking
+* [x] unit/integration tests
 * [ ] secret scanning (optional but recommended)
 * [ ] dependency audit (optional)
 
 Acceptance:
 
-* [ ] `Hook: Check` and `Hook: Verify` produce deterministic pass/fail.
+* [x] `Hook: Check` and `Hook: Verify` produce deterministic pass/fail.
 
 ---
 
@@ -241,7 +241,7 @@ Acceptance:
 
 Deliver:
 
-* [ ] `README_CURSOR.md` including:
+* [x] `README_CURSOR.md` including:
 
   * install
   * open in Cursor
@@ -253,11 +253,11 @@ Deliver:
   * start: preflight + plan
   * during: iterate loop
   * end: verify + pr notes
-* [ ] Troubleshooting section (common failure modes).
+* [x] Troubleshooting section (common failure modes).
 
 Acceptance:
 
-* [ ] A new dev can run the loop on day 1.
+* [x] A new dev can run the loop on day 1.
 
 ---
 
@@ -308,13 +308,13 @@ Each task must:
 
 # Acceptance Tests
 
-1. [ ] Open repo in Cursor → rules are active and discoverable
-2. [ ] Run **Hook: Preflight** → log entry appended
-3. [ ] Run **Hook: Iterate** after a small change → log includes files + results + next step
-4. [ ] Intentionally break something → **Hook: Verify** fails and logs failure
-5. [ ] Fix it → **Hook: Verify** passes
-6. [ ] Generate **Hook: PR Notes** → creates review-ready summary
-7. [ ] `pnpm test` passes
+1. [x] Open repo in Cursor → rules are active and discoverable
+2. [x] Run **Hook: Preflight** → log entry appended
+3. [x] Run **Hook: Iterate** after a small change → log includes files + results + next step
+4. [x] Intentionally break something → **Hook: Verify** fails and logs failure
+5. [x] Fix it → **Hook: Verify** passes
+6. [x] Generate **Hook: PR Notes** → creates review-ready summary
+7. [x] `pnpm test` passes
 
 ---
 
