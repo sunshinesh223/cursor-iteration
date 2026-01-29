@@ -1,0 +1,35 @@
+{
+  "name": "cursor-iteration",
+  "version": "1.0.0",
+  "description": "Feature-parity migration of everything-claude-code to Cursor IDE",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "hook:preflight": "node scripts/hooks/preflight.js",
+    "hook:plan": "node scripts/hooks/plan.js",
+    "hook:check": "node scripts/hooks/check.js",
+    "hook:test": "node scripts/hooks/test.js",
+    "hook:verify": "node scripts/hooks/verify.js",
+    "hook:iterate": "node scripts/hooks/iterate.js",
+    "hook:reflect": "node scripts/hooks/reflect.js",
+    "hook:diff": "node scripts/hooks/diff.js",
+    "hook:prnotes": "node scripts/hooks/prnotes.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

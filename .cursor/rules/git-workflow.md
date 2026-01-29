@@ -1,0 +1,56 @@
+# Git Workflow
+
+## Commit Message Format
+
+```
+<type>: <description>
+
+<body>
+```
+
+Types: feat, fix, refactor, docs, test, chore, perf, ci
+
+Examples:
+- `feat: add user authentication`
+- `fix: resolve null pointer in auth service`
+- `refactor: extract validation logic`
+- `docs: update API documentation`
+- `test: add tests for user service`
+
+## Branch Naming
+
+- `feature/short-description` - New features
+- `fix/issue-description` - Bug fixes
+- `refactor/component-name` - Refactoring
+- `docs/topic` - Documentation updates
+
+## Pull Request Workflow
+
+When creating PRs:
+1. Analyze full commit history (not just latest commit)
+2. Use `git diff [base-branch]...HEAD` to see all changes
+3. Draft comprehensive PR summary
+4. Include test plan with TODOs
+5. Push with `-u` flag if new branch
+
+## Feature Implementation Workflow
+
+1. **Plan First**
+   - Create implementation plan
+   - Identify dependencies and risks
+   - Break down into phases
+
+2. **TDD Approach**
+   - Write tests first (RED)
+   - Implement to pass tests (GREEN)
+   - Refactor (IMPROVE)
+   - Verify 80%+ coverage
+
+3. **Code Review**
+   - Review immediately after writing code
+   - Address CRITICAL and HIGH issues
+   - Fix MEDIUM issues when possible
+
+4. **Commit & Push**
+   - Detailed commit messages
+   - Follow conventional commits format
