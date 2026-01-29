@@ -3,8 +3,8 @@
 # DO NOT EDIT - regenerated on task file change
 
 source_file: RALPH_TASK.md
-source_mtime: 1769689610
-generated_at: 2026-01-29T12:28:55Z
+source_mtime: 1769689809
+generated_at: 2026-01-29T12:30:55Z
 
 tasks:
   - id: "line_17"
@@ -177,7 +177,7 @@ tasks:
     raw_marker: -
   - id: "line_153"
     line_number: 153
-    status: pending
+    status: completed
     parallel_group: 999999
     description: CI runs `pnpm hook:verify` on PR.
     indent_level: 0
