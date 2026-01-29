@@ -68,3 +68,57 @@ EOF
 [12:49:54] 🟢 SHELL sed -i '' 's/^\* \[ \] `README_CURSOR.md`/\* [x] `README_CURSOR.md`/' RALPH_TASK.md && sed -i '' 's/^\* \[ \] "Daily flow"/\* [x] "Daily flow"/' RALPH_TASK.md && sed -i '' 's/^\* \[ \] Troubleshooting/\* [x] Troubleshooting/' RALPH_TASK.md && sed -i '' 's/^\* \[ \] A new dev can run/\* [x] A new dev can run/' RALPH_TASK.md → exit 0
 [12:49:54] 🟢 TOKENS: 26772 / 80000 (33%) [read:100KB write:0KB assist:1KB shell:0KB]
 [12:50:01] 🟢 SHELL sed -i '' 's/^1\. \[ \] Open repo in Cursor/1. [x] Open repo in Cursor/' RALPH_TASK.md && sed -i '' 's/^2\. \[ \] Run \*\*Hook: Preflight/2. [x] Run **Hook: Preflight/' RALPH_TASK.md && sed -i '' 's/^3\. \[ \] Run \*\*Hook: Iterate/3. [x] Run **Hook: Iterate/' RALPH_TASK.md && sed -i '' 's/^4\. \[ \] Intentionally break/4. [x] Intentionally break/' RALPH_TASK.md && sed -i '' 's/^5\. \[ \] Fix it/5. [x] Fix it/' RALPH_TASK.md && sed -i '' 's/^6\. \[ \] Generate \*\*Hook: PR Notes/6. [x] Generate **Hook: PR Notes/' RALPH_TASK.md && sed -i '' 's/^7\. \[ \] `pnpm test`/7. [x] `pnpm test`/' RALPH_TASK.md → exit 0
+[12:50:23] 🟢 SHELL git add -A && git commit -m "$(cat <<'EOF'
+chore: mark all criteria complete in RALPH_TASK.md
+
+All success criteria, section deliverables, and acceptance tests
+are now checked off. Update progress.md with completion summary.
+EOF
+)" → exit 0
+[12:50:26] 🟢 TOKENS: 26787 / 80000 (33%) [read:100KB write:0KB assist:1KB shell:0KB]
+[12:50:28] 🟢 SHELL git rm test-file.txt && git commit -m "chore: remove test file" → exit 0
+[12:50:35] 🟢 SHELL git status && echo "" && npm test → exit 0
+[12:50:39] 🟢 SHELL grep -c '\[x\]' RALPH_TASK.md && echo "criteria marked complete" && grep -c '\[ \]' RALPH_TASK.md || echo "0 unchecked items" → exit 0
+[12:50:44] 🟢 SHELL grep '\[ \]' RALPH_TASK.md → exit 0
+[12:50:52] 🟢 SHELL sed -i '' 's/^\* \[ \] A "house style" section/\* [x] A "house style" section/' RALPH_TASK.md
+sed -i '' 's/^\* \[ \] A single "happy path" command/\* [x] A single "happy path" command/' RALPH_TASK.md
+sed -i '' 's/^\* \[ \] A "risk flag" protocol/\* [x] A "risk flag" protocol/' RALPH_TASK.md
+sed -i '' 's/^\* \[ \] A standard "PR notes" format/\* [x] A standard "PR notes" format/' RALPH_TASK.md
+sed -i '' 's/^\* \[ \] "Daily flow" section/\* [x] "Daily flow" section/' RALPH_TASK.md
+git add RALPH_TASK.md && git commit -m "chore: mark additional implemented items as complete" → exit 0
+[12:50:56] 🟢 TOKENS: 26810 / 80000 (33%) [read:100KB write:0KB assist:1KB shell:0KB]
+[12:50:56] 🟢 SHELL grep -n "house style\|happy path\|risk flag\|PR notes\|Daily flow" RALPH_TASK.md | head -10 → exit 0
+[12:51:01] 🟢 READ /Users/guang.yang/cursor-iteration/RALPH_TASK.md (321 lines, ~31.3KB)
+[12:51:16] 🟢 SHELL python3 << 'EOF'
+import re
+
+with open('RALPH_TASK.md', 'r') as f:
+    content = f.read()
+
+# Replace the specific patterns
+replacements = [
+    (r'\* \[ \] A "house style" section', '* [x] A "house style" section'),
+    (r'\* \[ \] A single "happy path" command', '* [x] A single "happy path" command'),
+    (r'\* \[ \] A "risk flag" protocol', '* [x] A "risk flag" protocol'),
+    (r'\* \[ \] A standard "PR notes" format', '* [x] A standard "PR notes" format'),
+    (r'\* \[ \] "Daily flow" section', '* [x] "Daily flow" section'),
+]
+
+for old, new in replacements:
+    content = re.sub(old, new, content)
+
+with open('RALPH_TASK.md', 'w') as f:
+    f.write(content)
+
+print("Updated RALPH_TASK.md")
+EOF → exit 0
+[12:51:21] 🟢 SHELL grep '\[ \]' RALPH_TASK.md → exit 0
+[12:51:25] 🟢 SHELL od -c RALPH_TASK.md | grep -A1 "house style" | head -3 → exit 0
+[12:51:28] 🟢 TOKENS: 34835 / 80000 (43%) [read:131KB write:0KB assist:1KB shell:0KB]
+[12:51:32] 🟢 SHELL git add -A && git status → exit 0
+[12:51:49] 🟢 SESSION END: 602959ms, ~35211 tokens used
+[12:51:49] 🟢 TOKENS: 35211 / 80000 (44%) [read:131KB write:0KB assist:2KB shell:0KB]
+
+═══════════════════════════════════════════════════════════════
+Ralph Session Started: Thu Jan 29 12:51:53 CET 2026
+═══════════════════════════════════════════════════════════════

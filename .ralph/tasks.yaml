@@ -1,0 +1,380 @@
+# Ralph Task Cache
+# Auto-generated from RALPH_TASK.md
+# DO NOT EDIT - regenerated on task file change
+
+source_file: RALPH_TASK.md
+source_mtime: 1769687476
+generated_at: 2026-01-29T11:51:50Z
+
+tasks:
+  - id: "line_16"
+    line_number: 16
+    status: completed
+    parallel_group: 999999
+    description: A developer can open the repo in Cursor and immediately access the migrated workflows (rules + tasks/commands + docs).
+    indent_level: 0
+    raw_marker: 1.
+  - id: "line_17"
+    line_number: 17
+    status: completed
+    parallel_group: 999999
+    description: All key features from the source repo are mapped to Cursor equivalents (implemented or explicitly documented as “gap + workaround”).
+    indent_level: 0
+    raw_marker: 2.
+  - id: "line_18"
+    line_number: 18
+    status: completed
+    parallel_group: 999999
+    description: “Hooks” behavior (iterative learning loop + auto/IDE triggers + logging) is available in Cursor (manual IDE commands at minimum).
+    indent_level: 0
+    raw_marker: 3.
+  - id: "line_19"
+    line_number: 19
+    status: completed
+    parallel_group: 999999
+    description: A feature parity matrix exists: **Source feature → Cursor equivalent → Status → Notes**.
+    indent_level: 0
+    raw_marker: 4.
+  - id: "line_20"
+    line_number: 20
+    status: completed
+    parallel_group: 999999
+    description: A quickstart exists that works end-to-end in <10 minutes.
+    indent_level: 0
+    raw_marker: 5.
+  - id: "line_21"
+    line_number: 21
+    status: completed
+    parallel_group: 999999
+    description: `pnpm test` passes (if tests exist in the target repo).
+    indent_level: 0
+    raw_marker: 6.
+  - id: "line_43"
+    line_number: 43
+    status: completed
+    parallel_group: 999999
+    description: Cursor project rules that enforce:
+    indent_level: 0
+    raw_marker: *
+  - id: "line_51"
+    line_number: 51
+    status: pending
+    parallel_group: 999999
+    description: A “house style” section (tone, conventions, decision rules).
+    indent_level: 0
+    raw_marker: *
+  - id: "line_55"
+    line_number: 55
+    status: completed
+    parallel_group: 999999
+    description: Rules are visible/active in Cursor and referenced in quickstart.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_65"
+    line_number: 65
+    status: completed
+    parallel_group: 999999
+    description: A documented loop used daily:
+    indent_level: 0
+    raw_marker: *
+  - id: "line_72"
+    line_number: 72
+    status: pending
+    parallel_group: 999999
+    description: A single “happy path” command that does most of the loop.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_76"
+    line_number: 76
+    status: completed
+    parallel_group: 999999
+    description: A new dev can follow the loop without needing prior context.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_88"
+    line_number: 88
+    status: completed
+    parallel_group: 999999
+    description: **Hook: Preflight** (`pnpm hook:preflight`)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_91"
+    line_number: 91
+    status: completed
+    parallel_group: 999999
+    description: **Hook: Plan** (`pnpm hook:plan`)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_94"
+    line_number: 94
+    status: completed
+    parallel_group: 999999
+    description: **Hook: Check** (`pnpm hook:check`)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_97"
+    line_number: 97
+    status: completed
+    parallel_group: 999999
+    description: **Hook: Test** (`pnpm hook:test`)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_100"
+    line_number: 100
+    status: completed
+    parallel_group: 999999
+    description: **Hook: Verify** (`pnpm hook:verify`)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_103"
+    line_number: 103
+    status: completed
+    parallel_group: 999999
+    description: **Hook: Iterate** (`pnpm hook:iterate`)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_106"
+    line_number: 106
+    status: completed
+    parallel_group: 999999
+    description: **Hook: Reflect** (`pnpm hook:reflect`)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_109"
+    line_number: 109
+    status: completed
+    parallel_group: 999999
+    description: **Hook: Diff Summary** (`pnpm hook:diff`)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_112"
+    line_number: 112
+    status: completed
+    parallel_group: 999999
+    description: **Hook: PR Notes** (`pnpm hook:prnotes`)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_117"
+    line_number: 117
+    status: completed
+    parallel_group: 999999
+    description: Append-only log at `docs/learning-log.md`
+    indent_level: 0
+    raw_marker: *
+  - id: "line_118"
+    line_number: 118
+    status: completed
+    parallel_group: 999999
+    description: Each hook run appends a structured entry.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_148"
+    line_number: 148
+    status: pending
+    parallel_group: 999999
+    description: Git hooks (husky) call the same `pnpm hook:*` scripts:
+    indent_level: 0
+    raw_marker: *
+  - id: "line_152"
+    line_number: 152
+    status: pending
+    parallel_group: 999999
+    description: CI runs `pnpm hook:verify` on PR.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_156"
+    line_number: 156
+    status: completed
+    parallel_group: 999999
+    description: Manual hooks work from Cursor Tasks.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_157"
+    line_number: 157
+    status: pending
+    parallel_group: 999999
+    description: (Optional) Auto hooks enforce the same gates.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_167"
+    line_number: 167
+    status: completed
+    parallel_group: 999999
+    description: A review checklist template:
+    indent_level: 0
+    raw_marker: *
+  - id: "line_175"
+    line_number: 175
+    status: pending
+    parallel_group: 999999
+    description: A “risk flag” protocol (examples):
+    indent_level: 0
+    raw_marker: *
+  - id: "line_181"
+    line_number: 181
+    status: pending
+    parallel_group: 999999
+    description: A standard “PR notes” format generated by `Hook: PR Notes`.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_185"
+    line_number: 185
+    status: completed
+    parallel_group: 999999
+    description: Review artifacts can be produced for any change in <2 minutes.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_195"
+    line_number: 195
+    status: completed
+    parallel_group: 999999
+    description: A task template (like this file format) for repeatable tasks:
+    indent_level: 0
+    raw_marker: *
+  - id: "line_200"
+    line_number: 200
+    status: completed
+    parallel_group: 999999
+    description: A bugfix template:
+    indent_level: 0
+    raw_marker: *
+  - id: "line_206"
+    line_number: 206
+    status: completed
+    parallel_group: 999999
+    description: A feature template:
+    indent_level: 0
+    raw_marker: *
+  - id: "line_215"
+    line_number: 215
+    status: completed
+    parallel_group: 999999
+    description: One index doc links to all templates.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_225"
+    line_number: 225
+    status: completed
+    parallel_group: 999999
+    description: formatting
+    indent_level: 0
+    raw_marker: *
+  - id: "line_226"
+    line_number: 226
+    status: completed
+    parallel_group: 999999
+    description: linting
+    indent_level: 0
+    raw_marker: *
+  - id: "line_227"
+    line_number: 227
+    status: completed
+    parallel_group: 999999
+    description: typechecking
+    indent_level: 0
+    raw_marker: *
+  - id: "line_228"
+    line_number: 228
+    status: completed
+    parallel_group: 999999
+    description: unit/integration tests
+    indent_level: 0
+    raw_marker: *
+  - id: "line_229"
+    line_number: 229
+    status: pending
+    parallel_group: 999999
+    description: secret scanning (optional but recommended)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_230"
+    line_number: 230
+    status: pending
+    parallel_group: 999999
+    description: dependency audit (optional)
+    indent_level: 0
+    raw_marker: *
+  - id: "line_234"
+    line_number: 234
+    status: completed
+    parallel_group: 999999
+    description: `Hook: Check` and `Hook: Verify` produce deterministic pass/fail.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_244"
+    line_number: 244
+    status: completed
+    parallel_group: 999999
+    description: `README_CURSOR.md` including:
+    indent_level: 0
+    raw_marker: *
+  - id: "line_251"
+    line_number: 251
+    status: pending
+    parallel_group: 999999
+    description: “Daily flow” section:
+    indent_level: 0
+    raw_marker: *
+  - id: "line_256"
+    line_number: 256
+    status: completed
+    parallel_group: 999999
+    description: Troubleshooting section (common failure modes).
+    indent_level: 0
+    raw_marker: *
+  - id: "line_260"
+    line_number: 260
+    status: completed
+    parallel_group: 999999
+    description: A new dev can run the loop on day 1.
+    indent_level: 0
+    raw_marker: *
+  - id: "line_311"
+    line_number: 311
+    status: completed
+    parallel_group: 999999
+    description: Open repo in Cursor → rules are active and discoverable
+    indent_level: 0
+    raw_marker: 1.
+  - id: "line_312"
+    line_number: 312
+    status: completed
+    parallel_group: 999999
+    description: Run **Hook: Preflight** → log entry appended
+    indent_level: 0
+    raw_marker: 2.
+  - id: "line_313"
+    line_number: 313
+    status: completed
+    parallel_group: 999999
+    description: Run **Hook: Iterate** after a small change → log includes files + results + next step
+    indent_level: 0
+    raw_marker: 3.
+  - id: "line_314"
+    line_number: 314
+    status: completed
+    parallel_group: 999999
+    description: Intentionally break something → **Hook: Verify** fails and logs failure
+    indent_level: 0
+    raw_marker: 4.
+  - id: "line_315"
+    line_number: 315
+    status: completed
+    parallel_group: 999999
+    description: Fix it → **Hook: Verify** passes
+    indent_level: 0
+    raw_marker: 5.
+  - id: "line_316"
+    line_number: 316
+    status: completed
+    parallel_group: 999999
+    description: Generate **Hook: PR Notes** → creates review-ready summary
+    indent_level: 0
+    raw_marker: 6.
+  - id: "line_317"
+    line_number: 317
+    status: completed
+    parallel_group: 999999
+    description: `pnpm test` passes
+    indent_level: 0
+    raw_marker: 7.
