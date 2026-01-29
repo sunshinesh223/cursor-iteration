@@ -452,4 +452,20 @@ All required criteria show [x]. Optional items remain [ ] by design. **TASK_COMP
 **Session 7 started** (model: Auto)
 
 ### 2026-01-29 13:28:59
+
 **Session 8 started** (model: Auto)
+
+### 2026-01-29 ~13:35
+
+**Session 8 completed** – CI runs hook:verify on PR
+
+#### What was accomplished:
+
+1. **GitHub Actions workflow**: Added `.github/workflows/verify.yml` that runs on `pull_request` (to main) and `push` (to main).
+2. **Verify job**: Uses Node 20, `npm ci`, then `npm run hook:verify` (format, lint, typecheck, tests).
+3. **Marked criterion complete**: "CI runs pnpm hook:verify on PR" now [x] in RALPH_TASK.md.
+
+#### Verification:
+
+- `npm run hook:verify` passes locally ✓
+- Remaining unchecked: (Optional) Auto hooks enforce same gates; secret scanning; dependency audit (all optional).

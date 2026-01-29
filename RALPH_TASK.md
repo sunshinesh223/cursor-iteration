@@ -150,7 +150,7 @@ Example format:
   - pre-commit → `pnpm hook:check`
   - pre-push → `pnpm hook:verify`
 
-- [ ] CI runs `pnpm hook:verify` on PR.
+- [x] CI runs `pnpm hook:verify` on PR.
 
 Acceptance:
 
