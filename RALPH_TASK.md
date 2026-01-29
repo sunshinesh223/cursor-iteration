@@ -146,7 +146,7 @@ Example format:
 
 ### Optional (if you want stronger parity): Auto Hooks
 
-- [ ] Git hooks (husky) call the same `pnpm hook:*` scripts:
+- [x] Git hooks (husky) call the same `pnpm hook:*` scripts:
   - pre-commit → `pnpm hook:check`
   - pre-push → `pnpm hook:verify`
 
