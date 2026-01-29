@@ -24,9 +24,6 @@ async function main() {
   const commits = runCommand('git log --oneline main..HEAD 2>/dev/null || git log --oneline -5')
   const commitLog = commits.stdout || ''
 
-  // Get diff stat
-  const diffStat = runCommand('git diff --stat main...HEAD 2>/dev/null || git diff --stat HEAD~1')
-
   // Count file types
   const sourceFiles = changedFiles.filter(
     (f) => f.endsWith('.ts') || f.endsWith('.js') || f.endsWith('.tsx') || f.endsWith('.jsx')

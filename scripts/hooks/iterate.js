@@ -8,7 +8,6 @@ import {
   runCommand,
   getCurrentBranch,
   getChangedFiles,
-  getGitStatus,
   appendToLearningLog,
   formatLogEntry,
   exitWithStatus,
