@@ -1,6 +1,11 @@
 # Auto-generated files
 .ralph/tasks.yaml
 
+# Log files (append-only, may have formatting that prettier doesn't handle)
+.ralph/activity.log
+docs/learning-log.md
+.ralph/progress.md
+
 # Dependencies
 node_modules/
 
